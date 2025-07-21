@@ -1,0 +1,99 @@
+---
+title: "Atelier Harmonica - MJC de Savigny"
+output: 
+  html_document:
+    theme: united
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F , message = F , warning = F)
+```
+
+<style>
+p {
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  margin-bottom: 24px !important;
+}
+
+h1 {
+  color: brown;
+  text-align: center;
+  font-size: 30px !important;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: brown;
+}
+
+.dataTables_wrapper {
+  width: 100% !important;
+  overflow-x: auto;
+}
+
+table.dataTable {
+  width: 100% !important;
+}
+</style>
+
+
+<br><br>
+
+Pour les archives, pour les (re)travailler, ou pour trouver des idées, voici une liste de morceaux que l'on a travaillé au cours des dernières années avec l'atelier Harmonica, et pour lesquels on a noté une tablature. 
+
+J'ai mis presque tout ce que j'ai trouvé chez mois ! Il y a des morceaux pour chromatique et d'autres pour diatonique, dans différentes tonalités mais pouvant bien sûr toutes être jouées en do 😋 ! Il y a certains morceaux pour chromatique qu'on avait travaillé avec Gwen à l'époque, qui me semblent très durs et qui, pour certains, sont uniquement en solfège, sans tablature ! Dites moi si jamais vous voulez que j'ajoute une tablature sur la partie harmonica  ça ne prend pas beaucoup de temps. Il y a aussi peut-être des erreurs par ci par là !
+
+J'ai prévu une case pour des liens vers des videos mais je n'ai pas mis grand chose dedans pour le moment. Je complèterai au fur et à mesure quand j'aurai un peu de temps... N'hésitez pas à me dire s'il y a une erreur ou s'il manque des choses.
+
+<br>
+
+**Bonne musique les amis !🎵**
+
+<br>
+
+<hr>
+
+```{r}
+
+library(openxlsx)
+library(tidyverse)
+library(DT)
+
+rm(list = ls())
+
+# Lecture du fichier xlsx
+
+p1 <- read.xlsx("Liste_Partitions.xlsx") %>%
+  arrange(titre) %>%
+  mutate(fichier = paste0('<a href="sheets/' ,
+                          fichier ,
+                          '"  target="_blank">' ,
+                          'Lien</a>')) %>%
+  mutate(video = ifelse(!is.na(video) ,
+                        paste0('<a href="videos/' ,
+                                video ,
+                                '"  target="_blank">' ,
+                                'Lien</a>') ,
+                        NA))
+
+# Affichage de la table
+
+datatable(p1 , 
+          colnames = c("Titre" , 
+                       "Auteur" , 
+                       "Style" , 
+                       "Partition" , 
+                       "Video") ,
+          filter = "top" , 
+          rownames = F ,
+          escape = F ,
+          style = "bootstrap4" ,
+          options = list(pageLength = 10 , 
+                         ordering = F , 
+                         autoWidth = TRUE,
+                         scrollX = TRUE ,
+                         responsive = TRUE))
+
+```
