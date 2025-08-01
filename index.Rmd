@@ -1,0 +1,185 @@
+---
+title: "Atelier Harmonica - MJC de Savigny"
+output: 
+  html_document:
+    theme: united
+    highlight: tango
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F , message = F , warning = F)
+```
+
+<style>
+/* Style des cartes */
+#cards-container {
+  display: none;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 15px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+  background: white;
+}
+
+/* Responsive – affiche les cartes uniquement sur mobile */
+@media (max-width: 768px) {
+  #cards-container {
+    display: block;
+  }
+
+  .dataTables_wrapper {
+    display: none;
+  }
+}
+</style>
+
+
+<style>
+.dataTables_wrapper {
+  width: 100% !important;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+table.dataTable {
+  width: 100% !important;
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 600px) {
+  table.dataTable {
+    font-size: 12px;
+  }
+}
+</style>
+
+<style>
+@media only screen and (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 22px !important;
+  }
+
+  p {
+    font-size: 14px !important;
+  }
+}
+</style>
+
+
+<style>
+
+p {
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  margin-bottom: 24px !important;
+}
+
+h1 {
+  color: brown;
+  text-align: center;
+  font-size: 30px !important;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: brown;
+}
+
+.dataTables_wrapper {
+  width: 100% !important;
+  overflow-x: auto;
+}
+
+table.dataTable {
+  width: 100% !important;
+}
+</style>
+
+
+<br><br>
+
+Pour les archives, pour les (re)travailler, ou pour trouver des idées : voici une liste de morceaux pour lesquels on avait noté une tablature 😋. <br>
+
+**Bonne musique les amis !!🎵**
+
+<br>
+
+<hr>
+
+```{r}
+
+library(openxlsx)
+library(tidyverse)
+library(DT)
+library(htmltools)
+
+rm(list = ls())
+
+# Lecture du fichier xlsx
+
+p1 <- read.xlsx("Liste_Partitions.xlsx") %>%
+  arrange(titre) %>%
+  mutate(fichier = paste0('<a href="sheets/' ,
+                          fichier ,
+                          '"  target="_blank">' ,
+                          'Lien</a>')) %>%
+  mutate(video = ifelse(!is.na(video) ,
+                        paste0('<a href="videos/' ,
+                                video ,
+                                '"  target="_blank">' ,
+                                'Lien</a>') ,
+                        NA))
+
+# Affichage de la table
+
+datatable(p1 , 
+          colnames = c("Titre" , 
+                       "Auteur" , 
+                       "Style" , 
+                       "Partition" , 
+                       "Video") ,
+          filter = "top" , 
+          rownames = F ,
+          escape = F ,
+          style = "bootstrap4" ,
+          options = list(pageLength = 50 , 
+                         ordering = FALSE, 
+                         autoWidth = TRUE,
+                         scrollX = TRUE,
+                         responsive = TRUE,
+                         dom = 'ftp') ,
+          class = 'compact stripe hover',
+          width = '100%')
+
+# Créer du HTML de type "card" pour chaque morceau
+cards_html <- p1 %>%
+  mutate(html = paste0(
+    '<div class="card">',
+      '<div class="card-body">',
+        '<h5 class="card-title">🎵 ', titre, '</h5>',
+        '<p><strong>Auteur :</strong> ', auteur, '</p>',
+        '<p><strong>Style :</strong> ', style, '</p>',
+        '<p><strong>Partition :</strong> ', fichier, '</p>',
+        ifelse(!is.na(video),
+               paste0('<p><strong>Vidéo :</strong> ', video, '</p>'),
+               ''),
+      '</div>',
+    '</div>'
+  )) %>%
+  pull(html) %>%
+  paste(collapse = "\n")
+
+# Afficher les cartes dans un <div id="cards-container">
+HTML(paste0('<div id="cards-container">', cards_html, '</div>'))
+
+
+```
