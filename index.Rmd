@@ -112,8 +112,6 @@ table.dataTable {
 
 ### Tablatures
 
-...
-
 Quelques uns des morceaux travaillés dans le cadre de l'atelier au cours des années et quelques autres aussi...
 
 **Attention quand même aux possibles petites erreurs par-ci par-là !** 
