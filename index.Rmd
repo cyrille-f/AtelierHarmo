@@ -31,12 +31,15 @@ knitr::opts_chunk$set(echo = F , message = F , warning = F)
     display: block;
   }
 
+.card p {
+    margin-bottom: 10px !important;
+  }
+
   .dataTables_wrapper {
     display: none;
   }
 }
 </style>
-
 
 <style>
 .dataTables_wrapper {
@@ -105,13 +108,15 @@ table.dataTable {
 </style>
 
 
-<br><br>
+## {.tabset}
 
-Pour les archives, pour les (re)travailler, ou pour trouver des idées : voici une liste de morceaux pour lesquels on avait noté une tablature 😋. <br>
+### Tablatures
 
-**Bonne musique les amis !!🎵**
+...
 
-<br>
+Quelques uns des morceaux travaillés dans le cadre de l'atelier au cours des années et quelques autres aussi...
+
+**Attention quand même aux possibles petites erreurs par-ci par-là !** 
 
 <hr>
 
@@ -145,6 +150,7 @@ datatable(p1 ,
           colnames = c("Titre" , 
                        "Auteur" , 
                        "Style" , 
+                       "Harmonica" ,
                        "Partition" , 
                        "Video") ,
           filter = "top" , 
@@ -168,6 +174,7 @@ cards_html <- p1 %>%
         '<h5 class="card-title">🎵 ', titre, '</h5>',
         '<p><strong>Auteur :</strong> ', auteur, '</p>',
         '<p><strong>Style :</strong> ', style, '</p>',
+        '<p><strong>Harmonica :</strong> ', harmo, '</p>',
         '<p><strong>Partition :</strong> ', fichier, '</p>',
         ifelse(!is.na(video),
                paste0('<p><strong>Vidéo :</strong> ', video, '</p>'),
@@ -181,5 +188,19 @@ cards_html <- p1 %>%
 # Afficher les cartes dans un <div id="cards-container">
 HTML(paste0('<div id="cards-container">', cards_html, '</div>'))
 
-
 ```
+
+### Autres ressources
+
+D'autres ressources qui peuvent être utiles. *N'hésitez pas à proposer d'autres liens !*
+
+<hr>
+
+* [Harmonicafun](https://www.youtube.com/@harmonicafun)
+* [Adam Gussow](https://www.youtube.com/channel/UCfYHJbTZklgZU1bEVLaZyvQ)
+* [Indiara Sfair](https://www.youtube.com/@indiarasfair)
+* [Brendan Power](https://www.youtube.com/@BrendanPowerMusic)
+* [Paul lassey](https://www.youtube.com/channel/UCBLq_Sd1msR2wyA6KSk6i_g)
+* ...
+
+
