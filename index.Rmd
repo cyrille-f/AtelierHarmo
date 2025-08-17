@@ -193,16 +193,18 @@ HTML(paste0('<div id="cards-container">', cards_html, '</div>'))
 
 ### Autres ressources
 
-D'autres ressources qui peuvent être utiles. *N'hésitez pas à proposer d'autres liens !*
-* <a href="https://rmarkdown.rstudio.com" target="_blank">Site R Markdown</a>
+D'autres ressources qui peuvent être utiles. *N'hésitez pas à proposer d'autres liens si vous en avez !*
 
 <hr>
 
-<ul>
-  <li><a href="https://www.youtube.com/@harmonicafun" target="_blank">Harmonicafun</a></li>
-  <li><a href="https://www.youtube.com/channel/UCfYHJbTZklgZU1bEVLaZyvQ" target="_blank">Adam Gussow</a></li>
-  <li><a href="https://www.youtube.com/@indiarasfair" target="_blank">Indiara Sfair</a></li>
-  <li><a href="https://www.youtube.com/@BrendanPowerMusic" target="_blank">Brendan Power</a></li>
-  <li><a href="https://www.youtube.com/channel/UCBLq_Sd1msR2wyA6KSk6i_g" target="_blank">Paul Lassey</a></li>
-  <li>...</li>
-</ul>
+&#128204; <a href="https://www.youtube.com/channel/UCSsFJZEliooPyp15IG6VsBg" target="_blank">Jean-Jacques Milteau</a>
+
+&#128204; <a href="https://www.youtube.com/@BrendanPowerMusic" target="_blank">Brendan Power</a>
+
+&#128204; <a href="https://www.youtube.com/channel/UCfYHJbTZklgZU1bEVLaZyvQ" target="_blank">Adam Gussow</a>
+
+&#128204; <a href="https://www.youtube.com/@indiarasfair" target="_blank">Indiara Sfair</a>
+
+&#128204; <a href="https://www.youtube.com/@harmonicafun" target="_blank">Harmonicafun</a>
+
+&#128204; <a href="https://www.youtube.com/channel/UCBLq_Sd1msR2wyA6KSk6i_g" target="_blank">Paul Lassey</a>
