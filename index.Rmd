@@ -8,6 +8,14 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = F , message = F , warning = F)
+
+library(openxlsx)
+library(tidyverse)
+library(DT)
+library(htmltools)
+
+rm(list = ls())
+
 ```
 
 <style>
@@ -112,20 +120,15 @@ table.dataTable {
 
 ### Tablatures
 
-Quelques uns des morceaux travaillés dans le cadre de l'atelier au cours des années et quelques autres aussi...
+Quelques uns des morceaux travaillés dans le cadre de l'atelier au cours des années et quelques autres aussi &#128526;.
+
+Les "vidéos" sont en fait des exports au format midi et ne sont pas terribles. Mais elles permettent de voir rapidement ce que donne le morceau &#129300;...
 
 **Attention quand même aux possibles petites erreurs par-ci par-là !** 
 
 <hr>
 
 ```{r}
-
-library(openxlsx)
-library(tidyverse)
-library(DT)
-library(htmltools)
-
-rm(list = ls())
 
 # Lecture du fichier xlsx
 
@@ -191,14 +194,15 @@ HTML(paste0('<div id="cards-container">', cards_html, '</div>'))
 ### Autres ressources
 
 D'autres ressources qui peuvent être utiles. *N'hésitez pas à proposer d'autres liens !*
+* <a href="https://rmarkdown.rstudio.com" target="_blank">Site R Markdown</a>
 
 <hr>
 
-* [Harmonicafun](https://www.youtube.com/@harmonicafun)
-* [Adam Gussow](https://www.youtube.com/channel/UCfYHJbTZklgZU1bEVLaZyvQ)
-* [Indiara Sfair](https://www.youtube.com/@indiarasfair)
-* [Brendan Power](https://www.youtube.com/@BrendanPowerMusic)
-* [Paul lassey](https://www.youtube.com/channel/UCBLq_Sd1msR2wyA6KSk6i_g)
-* ...
-
-
+<ul>
+  <li><a href="https://www.youtube.com/@harmonicafun" target="_blank">Harmonicafun</a></li>
+  <li><a href="https://www.youtube.com/channel/UCfYHJbTZklgZU1bEVLaZyvQ" target="_blank">Adam Gussow</a></li>
+  <li><a href="https://www.youtube.com/@indiarasfair" target="_blank">Indiara Sfair</a></li>
+  <li><a href="https://www.youtube.com/@BrendanPowerMusic" target="_blank">Brendan Power</a></li>
+  <li><a href="https://www.youtube.com/channel/UCBLq_Sd1msR2wyA6KSk6i_g" target="_blank">Paul Lassey</a></li>
+  <li>...</li>
+</ul>
