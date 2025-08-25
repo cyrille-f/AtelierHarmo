@@ -122,7 +122,7 @@ table.dataTable {
 
 Quelques uns des morceaux travaillés dans le cadre de l'atelier au cours des années et quelques autres aussi &#128526;.
 
-Les "vidéos" sont en fait des exports au format midi et ne sont pas terribles. Mais elles permettent de voir rapidement ce que donne le morceau &#129300;...
+Les "vidéos" sont en fait des exports au format midi et ne sont pas terribles. Mais elles permettent de voir rapidement ce que donnent les morceaux &#129300;...
 
 **Attention quand même aux possibles petites erreurs par-ci par-là !** 
 
@@ -193,7 +193,9 @@ HTML(paste0('<div id="cards-container">', cards_html, '</div>'))
 
 ### Autres ressources
 
-D'autres ressources qui peuvent être utiles. *N'hésitez pas à proposer d'autres liens si vous en avez !*
+D'autres ressources qui peuvent être intéressantes.  Ce sont des pages YouTube pour le moment. 
+
+**N'hésitez pas à proposer d'autres liens si vous en avez !**
 
 <hr>
 
