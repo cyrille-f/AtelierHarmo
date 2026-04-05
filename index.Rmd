@@ -120,8 +120,6 @@ table.dataTable {
 
 ### Tablatures
 
-<hr>
-
 ```{r}
 
 # Lecture du fichier xlsx
@@ -186,8 +184,6 @@ HTML(paste0('<div id="cards-container">', cards_html, '</div>'))
 ```
 
 ### Autres ressources
-
-<hr>
 
 &#128204; <a href="https://www.youtube.com/channel/UCSsFJZEliooPyp15IG6VsBg" target="_blank">Jean-Jacques Milteau</a>
 
